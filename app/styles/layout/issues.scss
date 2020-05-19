@@ -1,0 +1,9 @@
+.issues {
+    .filters-bar {
+        @include sidebar-medium-width;
+        position: relative;
+    }
+    tg-filter {
+        transform: translateX(0);
+    }
+}

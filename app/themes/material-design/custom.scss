@@ -1,0 +1,45 @@
+.navbar {
+    background: rgba($red-amaranth, .6);
+    &::after {
+        background: url('../images/menu-vert.png') repeat top left;
+    }
+    .nav-right {
+        a:hover svg{
+            fill: rgba(255, 255, 255, .7);
+            stroke: rgba(255, 255, 255, .7);
+        }
+        svg {
+            fill: rgba(255, 255, 255, .5);
+            stroke: rgba(255, 255, 255, .5);
+        }
+        .active svg {
+            fill: #A83F60;
+            stroke:#A83F60;
+        }
+    }
+}
+
+tg-project-menu {
+    background-color: $secondary;
+}
+
+.main-nav .active svg {
+    fill: $primary;
+    stroke: $primary;
+}
+
+
+.track-button.active {
+    .track-inner {
+        background: darken($primary-10, 15%);
+    }
+    .track-button-counter {
+        background: darken($primary-10, 30%);
+    }
+}
+
+//// OVERRIDE
+
+.topnav-dropdown-wrapper .counter {
+    color: #A83F60;
+}

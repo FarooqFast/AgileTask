@@ -1,0 +1,18 @@
+.type-data(class!="<% if(editable){ %>clickable<% }%>")
+    span.level(style!="background-color:<%- type.color %>")
+    span
+        span.label <%- type.name %>
+        <% if(editable){ %>
+        tg-svg(svg-icon="icon-arrow-down")
+        <% }%>
+    span.label.level-name(translate="COMMON.FIELDS.TYPE")
+
+    ul.popover.pop-type
+        <% _.each(typees, function(tp) { %>
+        li
+            a.type(
+                href=""
+                title!="<%- tp.name %>"
+                data-type-id!="<%- tp.id %>"
+            ) <%- tp.name %>
+        <% }); %>

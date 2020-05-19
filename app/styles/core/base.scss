@@ -1,0 +1,119 @@
+// Basic layout styles
+@include meyer-reset;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    width: 100%;
+}
+body {
+    @include font-type(text);
+    line-height: 1.3;
+    min-height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    .master {
+        &.ng-animate {
+            transition: 0;
+        }
+    }
+    &.loading-project {
+        overflow: hidden;
+    }
+}
+
+.loader-active {
+    overflow: hidden;
+}
+
+.drag-active {
+    overflow-x: hidden;
+}
+
+.master {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.centered {
+    @include centered;
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    min-height: $main-height;
+}
+
+.menu-secondary {
+    @include sidebar-wide-width();
+    background-color: $grey-02;
+    border-right: 1px solid darken($grey-02, 3%);
+    flex: 0 0 auto;
+    min-height: $main-height;
+    min-width: 0;
+    padding: 1rem;
+    .search-in {
+        margin-top: .5rem;
+    }
+    .settings-nav {
+        background-color: $grey-05;
+    }
+    ul li {
+        a {
+            color: $grey-60;
+        }
+        &:hover,
+        &:hover a {
+            background: lighten($grey-02, 3%);
+            color: lighten($grey-60, 5%);
+        }
+        .active {
+            background: lighten($grey-02, 6%);
+            color: lighten($grey-60, 10%);
+        }
+    }
+}
+
+.menu-tertiary {
+    @include sidebar-narrow-width;
+    background-color: $tertiary;
+    border-right: 1px solid darken($tertiary, 3%);
+    flex: 0 0 auto;
+    min-height: $main-height;
+    ul li {
+        a {
+            color: $grey-70;
+        }
+        &:hover,
+        &:hover a {
+            background: lighten($tertiary, 3%);
+            color: lighten($grey-70, 5%);
+        }
+        .active {
+            background: lighten($tertiary, 6%);
+            color: lighten($grey-70, 10%);
+        }
+    }
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem 2rem;
+    .header-with-actions {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+}
+
+.hidden {
+    // scss-lint:disable ImportantRule
+    display: none !important;
+}

@@ -1,0 +1,320 @@
+.button,
+%button {
+    @include font-type(text);
+    @include font-size(small);
+    align-content: center;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 3px;
+    color: $white;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 21px;
+    min-height: 37px;
+    padding: 9px 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: normal;
+    &:hover,
+    &.active {
+        color: $white;
+    }
+    &:visited,
+    &:visited:hover {
+        color: $white;
+    }
+    &.loading {
+        span {
+            animation: loading .5s linear;
+        }
+    }
+    span {
+        color: $white;
+    }
+    .icon {
+        color: $white;
+    }
+    &.disabled,
+    &[disabled] {
+        background-color: $grey-10;
+        box-shadow: none;
+        color: $grey-30;
+        cursor: not-allowed;
+        opacity: .65;
+        &:hover {
+            background-color: $grey-10;
+            color: $grey-30;
+        }
+    }
+    &.button-small {
+        border-radius: 0;
+        padding: 0 .5rem;
+        width: 38px;
+    }
+    &.button-large {
+        @include font-size(large);
+        display: flex;
+        flex-direction: column;
+        min-height: 50px;
+        padding: 1rem 4rem;
+        width: 100%;
+    }
+    &.button-block {
+        width: 100%;
+    }
+    svg {
+        fill: $white;
+        stroke: $white;
+    }
+}
+
+.button-green {
+    @extend %button;
+    background: $secondary;
+    &:hover,
+    &.active,
+    &:visited:hover {
+        background: lighten($secondary, 5%);
+    }
+}
+
+.button-primary {
+    @extend %button;
+    background: $primary;
+    &:hover,
+    &.active,
+    &:visited:hover {
+        background: lighten($primary, 5%);
+    }
+}
+
+.button-gray {
+    @extend %button;
+    background: $grey-50;
+    &:hover,
+    &.active,
+    &:visited:hover {
+        background: lighten($grey-50, 5%);
+    }
+}
+.button-gray-light {
+    @extend %button;
+    background: $grey-20;
+    &:hover,
+    &.active,
+    &:visited:hover {
+        background: lighten($grey-20, 5%);
+    }
+}
+.button-red {
+    @extend %button;
+    background: $red;
+}
+.button-red-light {
+    @extend %button;
+    background: $red-light;
+}
+
+.button-red,
+.button-red-red-light {
+    &:hover,
+    &.active,
+    &:visited:hover {
+        background: lighten($red, 5%);
+    }
+}
+
+.trans-button {
+    @extend %button;
+    background-color: $grey-02;
+    span,
+    .icon {
+        color: $blackish;
+        transition: color .2s linear;
+    }
+    .icon {
+        margin-right: .5rem;
+    }
+    &:visited {
+        color: $blackish;
+    }
+}
+
+.add-button svg {
+    height: 1.25rem;
+    margin-bottom: -.2rem;
+    width: 1.25rem;
+}
+
+.menu-button {
+    @extend %button;
+    border-radius: 0;
+    color: $blackish;
+    &:hover {
+        background: $whitish;
+        color: $gray;
+    }
+    &:visited {
+        color: $blackish;
+    }
+    span {
+        color: $blackish;
+    }
+}
+
+.button-blackish {
+    @extend %button;
+    background: $blackish;
+    color: $whitish;
+    &:hover {
+        background: $blackish;
+        color: $white;
+    }
+}
+.button-bulk {
+    @include font-size(large);
+    margin-left: .5rem;
+}
+.button-auth {
+    @extend %button;
+    @include font-type(light);
+    background: $grayer;
+    display: flex;
+    width: 100%;
+    .icon,
+    img {
+        @include font-size(large);
+        color: $white;
+        margin-right: .5rem;
+        vertical-align: middle;
+    }
+    &:hover {
+        background: $black;
+    }
+}
+
+.button-tribe {
+    @extend %button;
+    align-items: center;
+    background: $tribe-primary;
+    display: flex;
+    padding: .4rem;
+    padding-left: 1.5rem;
+    &:hover,
+    &.active {
+        background: $tribe-secondary;
+        color: $white;
+    }
+    .tribe-logo {
+        margin-right: .5rem;
+        width: 1.5rem;
+    }
+}
+
+.tribe-more-info {
+    @include font-size(small);
+    color: $primary;
+    display: inline-block;
+    margin-top: .5rem;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+.button-filter {
+    @extend %button;
+    background-color: $grey-10;
+    margin-left: 1rem;
+    position: relative;
+    &:hover {
+        background: $gray-light;
+        svg {
+            fill: $whitish;
+            stroke: $whitish;
+        }
+    }
+    svg {
+        fill: $grey-90;
+        height: 1.1rem;
+        stroke: $grey-90;
+        width: 1.1rem;
+    }
+    .filter-num {
+        @include font-size(small);
+        @include font-type(medium);
+        align-items: center;
+        background: $red;
+        border-radius: 50%;
+        display: inline-flex;
+        height: 1rem;
+        justify-content: center;
+        left: -.5rem;
+        position: absolute;
+        top: -.5rem;
+        width: 1rem;
+    }
+}
+
+.button-group {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    input {
+        display: none;
+        &:checked+label {
+            background-color: $grey-70;
+            color: $white;
+        }
+        &:checked+label:hover {
+            background-color: $grey-70;
+        }
+        +label {
+            background-color: $grey-20;
+            cursor: pointer;
+            display: block;
+            padding: 2rem 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        +label:hover {
+            background: $grey-10;
+        }
+    }
+    .button-group-single {
+        flex: 1;
+        &:first-child {
+            margin-right: .5rem;
+        }
+    }
+}
+
+.button-check {
+    input {
+        display: none;
+        &:checked {
+            +label {
+                background: $primary;
+                transition: background .3s linear;
+            }
+        }
+    }
+    label {
+        background-color: $grey-20;
+        border-radius: 5px;
+        color: $white;
+        display: block;
+        padding: .5rem;
+        &:hover {
+            background: $primary-light;
+            cursor: pointer;
+            transition: background .3s linear;
+        }
+    }
+    input:checked + label {
+        background-color: $grey-70;
+    }
+}
